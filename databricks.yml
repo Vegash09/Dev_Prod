@@ -1,0 +1,19 @@
+bundle:
+  name: multi-pipeline-bundle
+ 
+include:
+  - pipelines/*.yml  
+  
+variables:
+  DATABRICKS_CLIENT_ID: {}
+ 
+
+targets:
+  dev:
+    default: true
+    mode: 'production'
+    workspace:
+      root_path: ${var.DATABRICKS_HOST}
+    run_as:
+      service_principal_name: ${var.DATABRICKS_CLIENT_ID}    
+   

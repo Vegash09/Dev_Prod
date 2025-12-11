@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    sample_job:
+      name: sample_job
+      tasks:
+        - task_key: sample_vivriti
+          notebook_task:
+            notebook_path: /Workspace/Deployment/CDD_Databricks/Sample_notebook
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
